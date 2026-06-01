@@ -1,0 +1,7 @@
+module.exports = {
+    AUTH_SERVICE: "http://localhost:5001",
+    ORDER_SERVICE: "http://localhost:5002",
+    PAYMENT_SERVICE: "http://localhost:5003",
+    KITCHEN_SERVICE: "http://localhost:5004",
+    NOTIFICATION_SERVICE: "http://localhost:5005"
+};
