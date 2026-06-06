@@ -20,4 +20,10 @@ Rails.application.routes.draw do
         to: "gateway#notifications",
         via: :all
 
+  match "/api/tables/*path",
+        to: "gateway#tables",
+        via: :all
+
+        resources :tables
+
 end
