@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_06_100723) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_06_164141) do
   create_table "tables", force: :cascade do |t|
     t.integer "capacity"
     t.datetime "created_at", null: false
+    t.string "qr_code"
+    t.text "qr_svg"
+    t.string "qr_url"
     t.string "status"
     t.string "table_number"
     t.datetime "updated_at", null: false

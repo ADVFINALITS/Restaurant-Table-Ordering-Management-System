@@ -1,3 +1,5 @@
+require "rqrcode"
+
 class TablesController < ApplicationController
 
   skip_before_action :authenticate_request
@@ -16,7 +18,26 @@ class TablesController < ApplicationController
     table = Table.new(table_params)
 
     if table.save
+
+      qr_url = "http://localhost:3000/table/#{table.id}"
+
+      qr = RQRCode::QRCode.new(qr_url)
+
+      svg = qr.as_svg(
+        offset: 0,
+        color: "000",
+        shape_rendering: "crispEdges",
+        module_size: 4
+      )
+
+      table.update(
+        qr_code: SecureRandom.uuid,
+        qr_url: qr_url,
+        qr_svg: svg
+      )
+
       render json: table, status: :created
+
     else
       render json: table.errors, status: :unprocessable_entity
     end
@@ -48,4 +69,5 @@ class TablesController < ApplicationController
       :status
     )
   end
+
 end
