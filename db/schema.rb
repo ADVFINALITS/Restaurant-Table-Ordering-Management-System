@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[8.1].define(version: 2026_06_04_075422) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -17,6 +18,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_04_075422) do
     t.string "name"
     t.string "password_digest"
     t.integer "role"
+=======
+ActiveRecord::Schema[8.1].define(version: 2026_06_06_164141) do
+  create_table "tables", force: :cascade do |t|
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.string "qr_code"
+    t.text "qr_svg"
+    t.string "qr_url"
+    t.string "status"
+    t.string "table_number"
+>>>>>>> 8c24fb18b8e7ffbfd0b12e64bcce6000d6c652ae
     t.datetime "updated_at", null: false
   end
 end
