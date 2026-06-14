@@ -25,5 +25,6 @@ Rails.application.routes.draw do
         via: :all
 
         resources :tables
+        resources :orders
 
 end
