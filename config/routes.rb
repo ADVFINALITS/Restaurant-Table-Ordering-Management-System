@@ -22,8 +22,13 @@ Rails.application.routes.draw do
     end
   end
 
-  # Orders
-  resources :orders
+ # Orders
+resources :orders do
+  member do
+    patch :ready
+    patch :served
+  end
+end
 
   # Carts
   resources :carts do

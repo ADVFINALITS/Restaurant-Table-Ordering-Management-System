@@ -1,6 +1,13 @@
 class Order < ApplicationRecord
 
+  validates :table_number, presence: true
+  validates :items, presence: true
+
   after_create :send_to_rabbitmq
+
+  def publish_food_ready
+    puts "FoodReady Event Published for Order ##{id}"
+  end
 
   private
 
