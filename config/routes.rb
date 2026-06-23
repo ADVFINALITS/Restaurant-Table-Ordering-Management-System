@@ -27,8 +27,11 @@ resources :orders do
   member do
     patch :ready
     patch :served
+    get :invoice
   end
 end
+
+resources :payments, only: [:create]
 
   # Carts
   resources :carts do

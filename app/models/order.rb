@@ -9,10 +9,23 @@ class Order < ApplicationRecord
     puts "FoodReady Event Published for Order ##{id}"
   end
 
+  # Generate invoice
+  def generate_invoice
+    item_list = items.split(",")
+
+    total = item_list.length * 10
+
+    {
+      order_id: id,
+      table_number: table_number,
+      items: item_list,
+      total_amount: total
+    }
+  end
+
   private
 
   def send_to_rabbitmq
-
     return unless defined?(ORDER_QUEUE)
 
     ORDER_QUEUE.publish(

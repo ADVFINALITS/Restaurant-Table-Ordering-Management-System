@@ -54,6 +54,12 @@ end
     }
   end
 
+  def invoice
+  order = Order.find(params[:id])
+
+  render json: order.generate_invoice
+end
+
   private
 
   def order_params
