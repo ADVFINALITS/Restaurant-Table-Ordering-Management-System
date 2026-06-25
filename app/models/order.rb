@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   validates :items, presence: true
 
   after_create :send_to_rabbitmq
+  after_create :notify_chef
 
   def publish_food_ready
     puts "FoodReady Event Published for Order ##{id}"
@@ -25,6 +26,10 @@ class Order < ApplicationRecord
 
   private
 
+  def notify_chef
+    NotificationService.notify_chef(self)
+  end
+
   def send_to_rabbitmq
     return unless defined?(ORDER_QUEUE)
 
@@ -41,4 +46,5 @@ class Order < ApplicationRecord
 
     puts "Order #{id} published to RabbitMQ"
   end
+
 end

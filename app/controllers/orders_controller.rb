@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
   order.publish_food_ready
 
   NotificationService.notify_waiter(order)
+  NotificationService.notify_customer(order)
 
   render json: {
     message: "Food is ready",
