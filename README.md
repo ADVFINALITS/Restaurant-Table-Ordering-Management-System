@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Restaurant Table Ordering — full stack
 
 A QR-code table-ordering system. A diner scans a code on their table,
@@ -89,3 +90,29 @@ friend are pushing this as one combined repo, `git add .` from this
 top-level folder will respect both automatically - just don't `cd`
 into either subfolder and run `git init` separately, or you'll end up
 with nested repos instead of one.
+=======
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+>>>>>>> bd391f410de4a8cd0e0b0658e0487cb38cb8cee1
