@@ -1,0 +1,21 @@
+burger:
+  menu_category: mains
+  slug: burger
+  name: Burger
+  description: Beef burger
+  price: 10.00
+  veg: false
+  spicy: false
+  available: true
+  position: 0
+
+soda:
+  menu_category: drinks
+  slug: soda
+  name: Soda
+  description: Cold soda
+  price: 3.00
+  veg: true
+  spicy: false
+  available: true
+  position: 0

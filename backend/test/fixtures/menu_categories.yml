@@ -1,0 +1,9 @@
+mains:
+  slug: mains
+  name: Mains
+  position: 0
+
+drinks:
+  slug: drinks
+  name: Drinks
+  position: 1
